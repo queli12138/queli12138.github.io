@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>四季诗画</title>
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+			}
+
+			.main {
+				max-width: 99%;
+				position: relative;
+				margin: 0 auto;
+				text-align: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			.bg {
+				position: relative;
+				margin: auto;
+				width: fit-content;
+				overflow: hidden;
+			}
+
+			#bgimg {
+				max-width: 100%;
+				max-height: 100%;
+				height: 100vh;
+			}
+
+			#title {
+				position: absolute;
+				width: 44%;
+				left: 51%;
+				transform: translate(-50%, 0);
+				bottom: 74%;
+				z-index: 1;
+			}
+
+			#section1 {
+				position: absolute;
+				width: 56%;
+				left: 50%;
+				transform: translate(-50%, 0);
+				bottom: 61%;
+				z-index: 1;
+				transition: all 1s ease;
+			}
+
+			#section2 {
+				position: absolute;
+				width: 56%;
+				left: 50%;
+				transform: translate(-50%, 0);
+				bottom: 49.5%;
+				z-index: 1;
+				transition: all 1s ease;
+			}
+
+			#section3 {
+				position: absolute;
+				width: 56%;
+				left: 50%;
+				transform: translate(-50%, 0);
+				bottom: 38%;
+				z-index: 1;
+				transition: all 1s ease;
+			}
+
+			#section4 {
+				position: absolute;
+				width: 56%;
+				left: 50%;
+				transform: translate(-50%, 0);
+				bottom: 26.5%;
+				z-index: 1;
+				transition: all 1s ease;
+			}
+
+			#button {
+				position: absolute;
+				width: 10%;
+				left: 10%;
+				transform: translate(-50%, 0);
+				bottom: 92%;
+				z-index: 1;
+			}
+
+			#cup {
+				position: absolute;
+				width: 47%;
+				left: 75%;
+				transform: translate(-50%, 0);
+				bottom: 2%;
+				z-index: 1;
+			}
+
+			
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="bg">
+				<img id="bgimg" src="img/section-bg.png" />
+				<img id="title" src="img/section-title.png" />
+				<img id="button" src="img/section-button.png" onclick="back()"/>
+				<img id="section1" src="img/section1.png" onclick="fadeOut(1)" />
+				<img id="section2" src="img/section2.png" onclick="fadeOut(2)" />
+				<img id="section3" src="img/section3.png" onclick="fadeOut(3)" />
+				<img id="section4" src="img/section4.png" onclick="fadeOut(4)" />
+				<img id="cup" src="img/section-cup.png" />
+			</div>
+		</div>
+		<script type="text/javascript">
+			var index = [1, 2, 3, 4];
+			var cnt;
+
+			function fadeOut(flag, speed) {
+				index.splice(flag - 1, 1);
+				var section1 = document.getElementById("section" + index[0]);
+				var section2 = document.getElementById("section" + index[1]);
+				var section3 = document.getElementById("section" + index[2]);
+				var opacitynum1 = section1.style.opacity || 1;
+				var opacitynum2 = section2.style.opacity || 1;
+				var opacitynum3 = section3.style.opacity || 1;
+				var speed = (speed / 100) || 10;
+				var opacityt = setInterval(opacityOff, speed);
+
+				function opacityOff() {
+					if (opacitynum1 > 0 && opacitynum2 > 0 && opacitynum3 > 0) {
+						section1.style.opacity = opacitynum1 = (opacitynum1 - 0.01).toFixed(2);
+						section2.style.opacity = opacitynum2 = (opacitynum2 - 0.01).toFixed(2);
+						section3.style.opacity = opacitynum3 = (opacitynum3 - 0.01).toFixed(2);
+					} else {
+						clearInterval(opacityt);
+					}
+				}
+				cnt = flag;
+				var haha = setTimeout(function() {
+					location.href = "https://queli12138.github.io/section-" + cnt;
+				}, 3000);
+			}
+			
+			function back(){
+				location.href = "https://imgjq.github.io/225701229/card";
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0
+    ,maximum-scale=1,minimum-scale=1, user-scalable=no">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            -ms-overflow-style: none; /* IE 和 Edge */
+        scrollbar-width: none; /* Firefox */
+            }
+            /* 隐藏 Chrome、Safari 和 Opera 的滚动条 */
+        *::-webkit-scrollbar {
+        display: none;
+        }
+        body{
+            background-color:white;
+        }
+        /* .ftus{
+            width: 100%;
+            height:100%;
+            overflow: hidden;
+        } */
+        .tus{
+            width: 100%;
+            height:966.4vw;
+            position:relative;
+            z-index: 2;
+            background-image: url("img/冬长图.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }    
+        .imgr{
+            width: auto;
+            height: auto;
+            position:absolute;
+            z-index: 3;
+            animation: fadeInOut 1.5s infinite;
+        }
+        .img1{
+            width:62.1vh;
+            height: 100%;
+            position: absolute;
+            top: 0%;
+            z-index: 4;
+        }
+        .img2{
+            width:auto;
+            height:16%;
+            position: absolute;
+            left: 45%;
+            top: 60%;
+            z-index: 5;
+            animation: fadeInOut 1.5s infinite;
+        }
+        .divs{
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        .divs1{
+            position: relative;
+            z-index: 4;
+        }
+        .tu{
+            position: absolute;
+            z-index: 5;
+        }
+        .jixu{
+            width: auto;
+            height: auto;
+            position: absolute;
+            bottom:25%;
+            left:33%;
+            z-index: 6;
+        }
+        .buy{
+            width: auto;
+            height: auto;
+            position: absolute;
+            bottom:25%;
+            left:55%;
+            z-index: 6;
+        }
+        .fanhui{
+            width: auto;
+            height: auto;
+            position: absolute;
+            bottom:19%;
+            left:43%;
+            z-index: 6;
+        }
+        .tu,.fanhui{
+            animation: fadeInOut1 0.5s ;
+        }
+        @keyframes fadeInOut {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.3; }
+        }       
+        @keyframes fadeInOut1 {
+        0% { opacity: 0.3; }
+        100% { opacity: 1; }
+        }  
+                            
+    </style>
+</head>
+<body>
+    <div class="q">
+        <img src="img/冬.png" alt="" class="img1">
+        <img src="img/huadong.png" alt="" class="img2">
+       <!-- 人物1 -->
+       <!-- <div class="ftus"> -->
+        <div class="tus">
+        <img src="img/renwu0.png" alt="" class="imgr" style="top:14.1%;left:3%;">
+        <div style="display: none;" class="divs">
+            <img src="img/tu1.png" alt="" class="tu">
+            <img src="img/fanhui.png" alt="" class="fanhui" style="bottom:19.3%;left:43.5%;">
+        </div>
+        <img src="img/renwu1.png" alt="" class="imgr" style="top:35.5% ;left:49%;">
+        <div style="display: none;" class="divs">
+            <img src="img/tu2.png" alt="" class="tu">
+            <img src="img/fanhui.png" alt="" class="fanhui" style="bottom:19.3%;left:43.5%;">
+        </div>
+        <img src="img/renwu2.png" alt="" class="imgr" style="top:51.1% ;left:40%;">
+        <div style="display: none;" class="divs">
+            <img src="img/tu3.png" alt="" class="tu">
+            <img src="img/fanhui.png" alt="" class="fanhui" style="bottom: 17.5%;left:40%;">
+        </div>
+        <img src="img/renwu3.png" alt="" class="imgr" style="top:62.8% ;left:52%;">
+        <div style="display: none;" class="divs">
+            <img src="img/tu4.png" alt="" class="tu">
+            <img src="img/fanhui.png" alt="" class="fanhui" style="bottom: 17.2%;left:45%;">
+        </div>
+        <img src="img/renwu4.png" alt="" class="imgr" style="top:74.8%;left:7%;">
+        <div style="display: none;" class="divs">
+            <img src="img/tu5.png" alt="" class="tu">
+            <img src="img/fanhui.png" alt="" class="fanhui" style="bottom: 16.5%;left:44%;">
+        </div>
+        <img src="img/renwu5.png" alt="" class="imgr" style="top:87.4% ;left:28%;">
+        <div style="display: none;" class="divs">
+            <img src="img/tu6.png" alt="" class="tu">
+            <img src="img/fanhui.png" alt="" class="fanhui" style="bottom: 16.5%;left:45%;">
+        </div>
+        <div  class="divs1" style="display: none;">
+            <img src="img/maishu.png" alt="" class="tu">
+            <img src="img/jixu.png" alt="" class="jixu">
+            <img src="img/buy.png" alt="" class="buy">
+        </div>
+       </div>
+       <!-- </div> -->
+       
+        
+    </div>
+     <script>
+       const img1=document.querySelector('.img1')
+       const img2=document.querySelector('.img2')
+       const divs0=document.querySelectorAll('.divs')[0]
+       const divs1=document.querySelectorAll('.divs')[1]
+       const divs2=document.querySelectorAll('.divs')[2]
+       const divs3=document.querySelectorAll('.divs')[3]
+       const divs4=document.querySelectorAll('.divs')[4]
+       const divs5=document.querySelectorAll('.divs')[5]
+       const imgr0=document.querySelectorAll('.imgr')[0]
+       const imgr1=document.querySelectorAll('.imgr')[1]
+       const imgr2=document.querySelectorAll('.imgr')[2]
+       const imgr3=document.querySelectorAll('.imgr')[3]
+       const imgr4=document.querySelectorAll('.imgr')[4]
+       const imgr5=document.querySelectorAll('.imgr')[5]
+       const tus=document.querySelector('.tus')
+       const divs=document.querySelector('.divs1')
+       const jixu=document.querySelector('.jixu')
+       const buy=document.querySelector('.buy')
+       let ystart
+       let yend
+       let Y
+       let Y1
+       let ystart1
+       let yend1
+       let spa=0 //速度
+       img1.style.width =window.innerWidth+"px"
+       img1.style.height = window.innerHeight+'px'
+       divs.style.width =window.innerWidth+"px"
+       divs.style.height = window.innerHeight+'px'
+    //    设置小图片的宽高比
+
+    imgr0.style.width = tus.offsetWidth*0.39+"px"
+    imgr0.style.height = tus.offsetHeight*0.05+'px'
+    imgr1.style.width = tus.offsetWidth*0.2375+"px"
+    imgr1.style.height = tus.offsetHeight*0.036+'px'
+    imgr2.style.width = tus.offsetWidth*0.24+"px"
+    imgr2.style.height = tus.offsetHeight*0.034+'px'
+    imgr3.style.width = tus.offsetWidth*0.35+"px"
+    imgr3.style.height = tus.offsetHeight*0.044+'px'
+    imgr4.style.width = tus.offsetWidth*0.22+"px"
+    imgr4.style.height = tus.offsetHeight*0.034+'px'
+    imgr5.style.width = tus.offsetWidth*0.28+"px"
+    imgr5.style.height = tus.offsetHeight*0.026+'px'
+
+
+// 设置触摸事件
+        tus.addEventListener('touchend',function(e){
+        if(e.target.className == 'imgr'){
+        imgr0.nextElementSibling.style.display = 'none'
+        imgr1.nextElementSibling.style.display = 'none'
+        imgr2.nextElementSibling.style.display = 'none'
+        imgr3.nextElementSibling.style.display = 'none'
+        imgr4.nextElementSibling.style.display = 'none'
+        imgr5.nextElementSibling.style.display = 'none'
+            e.target.nextElementSibling.style.display = 'block'
+            e.target.nextElementSibling.style.top = -tus.offsetTop+'px'
+            e.target.nextElementSibling.children[0].style.width = tus.offsetWidth+"px"
+            e.target.nextElementSibling.children[0].style.height =window.innerHeight+'px'
+            e.target.nextElementSibling.children[1].style.width = tus.offsetWidth*0.15+"px"
+            e.target.nextElementSibling.children[1].style.height =window.innerHeight*0.036+'px'
+            e.target.nextElementSibling.style.width = window.innerWidth
+            e.target.nextElementSibling.style.height = window.innerHeight
+        }
+        // 当滑倒最低端时跳出divs
+        
+        if(parseInt(tus.style.top)<=-tus.offsetHeight+window.innerHeight+6){
+            imgr0.nextElementSibling.style.display = 'none'
+            imgr1.nextElementSibling.style.display = 'none'
+            imgr2.nextElementSibling.style.display = 'none'
+            imgr3.nextElementSibling.style.display = 'none'
+            imgr4.nextElementSibling.style.display = 'none'
+            imgr5.nextElementSibling.style.display = 'none'
+            setTimeout(function(){
+                divs.style.display = 'block'
+                divs.style.top = -tus.offsetTop+'px'
+                divs.children[0].style.width = tus.offsetWidth+"px"
+                divs.children[0].style.height =window.innerHeight+'px'
+                divs.children[1].style.width = tus.offsetWidth*0.15+"px"
+                divs.children[1].style.height =window.innerHeight*0.036+'px'
+                divs.children[2].style.width = tus.offsetWidth*0.15+"px"
+                divs.children[2].style.height =window.innerHeight*0.036+'px'
+                
+                },300)
+            
+        }
+    })
+       jixu.addEventListener("touchend",(e)=>{
+      
+        location.href = 'https://imgjq.gitee.io/225701229/section'
+       })
+       buy.addEventListener("touchend",(e)=>{
+       
+        location.href = 'https://mbook.kongfz.com/195259/5341852909/'
+       })
+    // 退出和返回
+        divs0.children[1].addEventListener('touchend', function() {
+            divs0.style.display ='none'
+        });
+        divs1.children[1].addEventListener('touchend', function() {
+            divs1.style.display ='none'
+        });
+        divs2.children[1].addEventListener('touchend', function() {
+            divs2.style.display ='none'
+        });
+        divs3.children[1].addEventListener('touchend', function() {
+            divs3.style.display ='none'
+        });
+        divs4.children[1].addEventListener('touchend', function() {
+            divs4.style.display ='none'
+        });
+        divs5.children[1].addEventListener('touchend', function() {
+            divs5.style.display ='none'
+        });
+
+
+
+       img1.addEventListener("touchstart",(e)=>{
+       e.preventDefault(); // 阻止默认行为，如滚动或缩放
+        Y = e.touches[0].pageY; // 获取触点相对于页面的 Y 坐标
+        ystart=Y
+       })
+       img1.addEventListener("touchmove",(e)=>{
+       e.preventDefault(); // 阻止默认行为，如滚动或缩放
+       yend = e.touches[0].pageY; // 获取触点相对于页面的 Y 坐标
+       let imgtop = img1.getBoundingClientRect().top
+       img1.style.top =imgtop+yend-ystart+'px'
+       img2.style.top= parseInt(img1.style.top)+610+'px'
+       if(parseInt(img1.style.top)>0){
+        img1.style.top = 0+'px'
+        }
+       ystart = yend
+       })
+    //    tus滑动效果
+       tus.addEventListener("touchstart",(e)=>{
+       e.preventDefault(); // 阻止默认行为，如滚动或缩放
+        Y1 = e.touches[0].pageY; // 获取触点相对于页面的 Y 坐标
+        ystart1=Y1
+       })
+       tus.addEventListener("touchmove",(e)=>{
+       e.preventDefault(); // 阻止默认行为，如滚动或缩放
+       yend1 = e.touches[0].pageY; // 获取触点相对于页面的 Y 坐标
+       let imgtop1 = tus.getBoundingClientRect().top
+       tus.style.top =imgtop1+yend1-ystart1+'px'
+       if(parseInt(tus.style.top)>0){
+        // 
+        tus.style.top = 0+'px'
+        }
+        if(parseInt(tus.style.top)<-tus.offsetHeight+window.innerHeight){
+            tus.style.top =-tus.offsetHeight+window.innerHeight+'px'
+        }
+       ystart1 = yend1
+       })
+    
+
+    // 取消页面滑动
+        
+        img1.addEventListener("touchend",(e)=>{
+        e.preventDefault(); // 阻止默认行为，如滚动或缩放
+        // Y1 = e.changedTouches[0].pageY; // 获取触点相对于页面的 Y 坐标
+         if(parseInt(img1.style.top)<=-240){
+            animate()
+       }
+       })
+       
+       
+      // 上滑动画
+       function animate() {
+        let time1=setInterval(()=>{
+            spa += 0.2
+            img1.style.top= parseInt(img1.style.top)-spa+'px'
+            img2.style.top= parseInt(img1.style.top)+610+'px'
+            if(parseInt(img1.style.top)<=-1000){
+            img1.style.display = 'none'
+            img1.style.top = -1000+'px'
+            clearInterval(time1)
+            time1 = undefined;
+        }
+        },2)
+        
+        }
+   
+    </script>
+    
+</body>
+</html>
