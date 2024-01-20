@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>春</title>
+		<meta charset="utf-8">
+		<style type="text/css">
+			html,
+			body {
+				width: 100%;
+				height: 100%;
+				margin: 0;
+				padding: 0;
+				user-select: none;
+			}
+
+			.main {
+				max-width: 99%;
+				position: relative;
+				margin: 0 auto;
+				text-align: center;
+				height: 100vh;
+				overflow: hidden;
+			}
+
+			.bg {
+				position: relative;
+				margin: auto;
+				width: fit-content;
+				overflow: hidden;
+			}
+
+			#bgimg {
+				max-width: 100%;
+				max-height: 100%;
+				height: 100vh;
+			}
+
+			#frame {
+				position: absolute;
+				width: 100%;
+				height: 100%;
+				left: 50%;
+				transform: translate(-50%, 0);
+				bottom: 0%;
+				z-index: 2;
+			}
+
+			#title {
+				position: absolute;
+				width: 10%;
+				left: 50%;
+				transform: translate(-50%, 0);
+				bottom: 85%;
+				z-index: 2;
+				transition: all 2s ease;
+			}
+
+			#start {
+				position: absolute;
+				width: 30%;
+				left: 48%;
+				transform: translate(-50%, 0);
+				bottom: 36%;
+				z-index: 3;
+				transition: all 2s ease;
+			}
+
+			#mountain {
+				position: absolute;
+				width: 75%;
+				left: 49%;
+				transform: translate(-50%, 0);
+				bottom: 34.5%;
+				z-index: 1;
+				transition: all 2s ease;
+			}
+
+			#butterfly {
+				position: absolute;
+				width: 10%;
+				left: 32%;
+				transform: translate(-50%, 0);
+				bottom: 62%;
+				z-index: 2;
+			}
+
+			#text {
+				position: absolute;
+				width: 5.5%;
+				left: 66%;
+				transform: translate(-50%, 0);
+				bottom: 78%;
+				z-index: 2;
+				transition: all 2s ease;
+			}
+
+			#block {
+				position: absolute;
+				height: 60%;
+				left: 150%;
+				transform: translate(-50%, 0);
+				bottom: 34.5%;
+				z-index: 1;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="main">
+			<div class="bg">
+				<img id="bgimg" src="img/section1-bg.png" />
+				<img id="title" src="img/section1-title.png" />
+				<img id="start" src="img/section1-start.png" />
+				<img id="mountain" src="img/section1-mountain.png" />
+				<img id="butterfly" src="img/section1-butterfly.png" />
+				<img id="text" src="img/section1-text.png" />
+				<img id="frame" src="img/section1-frame.png" />
+
+			</div>
+		</div>
+	</body>
+	<script>
+		// 获取需要操作的元素
+		var start = document.getElementById("start");
+		var mountain = document.getElementById("mountain");
+		var butterfly = document.getElementById("butterfly");
+		var main = document.querySelector(".main");
+		var title = document.getElementById("title");
+		var text = document.getElementById("text");
+
+		var create = null;
+
+		const canvas = document.createElement('canvas');
+		const ctx = canvas.getContext('2d');
+
+		//点击start
+		start.onclick = function() {
+			//隐藏start
+			start.style.opacity = '0%';
+			title.style.opacity = '0%';
+			text.style.opacity = '0%';
+			mountain.style.opacity = "0%";
+
+
+			butterfly.v = 0.5; //速度
+			butterfly.a = 0.1; //加速度
+			butterfly.fly = setInterval(function() {
+
+
+				butterfly.v += butterfly.a;
+				var top = butterfly.offsetTop;
+				var bottom = butterfly.offset
+				top += butterfly.v;
+				//边界判断
+				if (top > mountain.offsetHeight + mountain.offsetTop) {
+					top = mountain.offsetHeight + mountain.offsetTop;
+					//游戏结束
+					clearInterval(butterfly.fly);
+				}
+				if (top < 0) {
+					top = 0;
+					//游戏结束
+					clearInterval(butterfly.fly);
+				}
+
+				butterfly.style.top = top + "px";
+			}, 20)
+
+			//动态创建障碍物以及障碍物移动
+			create_timer = setTimeout(function() {
+				//创建障碍物
+				var block = document.createElement('img');
+				block.id = 'block';
+				block.src = 'img/xiaoniaozhangaiwu.png';
+				main.appendChild(block);
+
+				function draw() {
+					ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+					ctx.drawImage(block, block.x, block.y);
+					ctx.drawImage(butterfly, butterfly.x, butterfly.y);
+
+					requestAnimationFrame(draw);
+				}
+
+				function checkCollision() {
+					const imageData1 = ctx.getImageData(butterfly.x, butterfly.y, butterfly.width, butterfly.height).data;
+					const imageData2 = ctx.getImageData(block.x, block.y, block.width, block.height).data;
+
+					for (let i = 3; i < imageData1.length; i += 4) {
+						if (imageData1[i] > 0 && imageData2[i] > 0) {
+							console.log('Collision detected!');
+							// 这里可以添加处理碰撞的逻辑
+							break;
+						}
+					}
+				}
+
+
+				block.move = setInterval(function() {
+					var left = block.offsetLeft - 2;
+					block.style.left = left + "px";
+
+					draw();
+					//游戏结束判断
+
+					checkCollision();
+				}, 20);
+			}, 2000)
+			//蝴蝶上升
+			main.onclick = function() {
+				//重置蝴蝶速度
+				butterfly.v = -3;
+			}
+		}
+	</script>
+</html>
